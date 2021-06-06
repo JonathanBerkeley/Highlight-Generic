@@ -1,3 +1,5 @@
 #pragma once
 #include <string>
-const std::string HIGHLIGHT_VERSION = "0.03";
+
+const LPCWSTR DLL_NAME = L"";
+const std::string VERSION = "0.01";

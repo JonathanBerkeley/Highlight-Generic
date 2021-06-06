@@ -2,5 +2,5 @@
 #include <iostream>
 #include "pch.h"
 
-void Init(HMODULE hModule);
-void LogicLoop(HMODULE hModule);
+void Init(HMODULE selfModule);
+void LogicLoop(HMODULE selfModule);

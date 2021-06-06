@@ -2,32 +2,31 @@
 #include "flashpoint.h"
 #include "constants.h"
 
-void Init(HMODULE hModule) {
+void Init(HMODULE selfModule) {
+    // Redirect stdout & stderr to new console
     AllocConsole();
-    freopen_s((FILE**)stdout, "CONOUT$", "w", stdout); // Redirect stdout & stderr to new console
+    freopen_s((FILE**)stdout, "CONOUT$", "w", stdout); 
     freopen_s((FILE**)stderr, "CONOUT$", "w", stderr);
 
-    LPCWSTR title = L"Highlight";
-    SetConsoleTitleW(title);
-    std::cout << "Highlight injected" << std::endl;
-    std::cout << "Version - " << HIGHLIGHT_VERSION << std::endl;
-
-    LogicLoop(hModule);
+    // Set title to console and output info on DLL
+    SetConsoleTitleW(DLL_NAME);
+    std::wcout << DLL_NAME << L" injected" << '\n';
+    std::cout << "Version - " << VERSION << '\n';
+    
+    std::wcout << '\n' << DLL_NAME << L"'s main loop has started" << '\n';
+    LogicLoop(selfModule);
 }
 
-void LogicLoop(HMODULE hModule) {
-    std::cout << "\nHighlight's main loop has started" << std::endl;
+void LogicLoop(HMODULE selfModule) {
+    // Main Logic Loop
     for (;;) {
-        if (GetAsyncKeyState(VK_END)) {
+        if (GetAsyncKeyState(VK_END) & 1) {
             // Uninject
-            std::cout << "If you can read this, an attempted uninjection probably failed" << std::endl;
             fclose(stdout);
             fclose(stderr);
             FreeConsole();
-            FreeLibraryAndExitThread(hModule, 0x0);
-            exit(0);
+            FreeLibraryAndExitThread(selfModule, 0x0);
         }
-        Sleep(300);
+        Sleep(1);
     }
-    
 }
