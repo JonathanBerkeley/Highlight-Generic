@@ -9,15 +9,16 @@ void Init(HMODULE selfModule) {
     freopen_s((FILE**)stderr, "CONOUT$", "w", stderr);
 
     // Set title to console and output info on DLL
-    SetConsoleTitleW(DLL_NAME);
+    SetConsoleTitle(DLL_NAME);
     std::wcout << DLL_NAME << L" injected" << '\n';
     std::cout << "Version - " << VERSION << '\n';
     
-    std::wcout << '\n' << DLL_NAME << L"'s main loop has started" << '\n';
     LogicLoop(selfModule);
 }
 
 void LogicLoop(HMODULE selfModule) {
+
+    std::wcout << '\n' << DLL_NAME << L"'s main loop has started" << '\n';
     // Main Logic Loop
     for (;;) {
         if (GetAsyncKeyState(VK_END) & 1) {
