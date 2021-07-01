@@ -1,8 +1,13 @@
 #include "pch.h"
 #include "flashpoint.h"
 #include "constants.h"
+#include "data.h"
 
-void Init(HMODULE selfModule) {
+using namespace data;
+
+void Init(HMODULE hModule) {
+    proc::selfModule = hModule;
+
     // Redirect stdout & stderr to new console
     AllocConsole();
     freopen_s((FILE**)stdout, "CONOUT$", "w", stdout); 
@@ -13,20 +18,20 @@ void Init(HMODULE selfModule) {
     std::wcout << constants::DLL_NAME << L" injected" << '\n';
     std::cout << "Version - " << constants::VERSION << '\n';
     
-    LogicLoop(selfModule);
+    LogicLoop();
 }
 
-void LogicLoop(HMODULE selfModule) {
+void LogicLoop() {
 
     std::wcout << '\n' << constants::DLL_NAME << L"'s main loop has started" << '\n';
     // Main Logic Loop
-    for (;;) {
-        if (GetAsyncKeyState(VK_END) & 1) {
+    while (running) {
+        if (GetAsyncKeyState(input::HK_UNLOAD) & 1) {
             // Uninject
             fclose(stdout);
             fclose(stderr);
             FreeConsole();
-            FreeLibraryAndExitThread(selfModule, 0x0);
+            FreeLibraryAndExitThread(proc::selfModule, 0x0);
         }
         Sleep(1);
     }

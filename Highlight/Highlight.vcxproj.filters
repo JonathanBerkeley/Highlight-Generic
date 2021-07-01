@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Preamble">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Internal">
+      <UniqueIdentifier>{4d38e0d2-dfa0-4389-a630-ae4e2197c414}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{6e8052e0-8f21-47cb-956a-ee271db5a807}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Internal\Data">
+      <UniqueIdentifier>{d941bd14-4264-4ae0-826c-6baed1fb225b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Internal\Flashpoint">
+      <UniqueIdentifier>{ce33c8bb-3081-4ef0-a4b2-87abede924cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Internal\Hook">
+      <UniqueIdentifier>{f9ae70c6-6270-4788-b4d5-52d97ae429a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Internal\Memory">
+      <UniqueIdentifier>{6ea27a80-da30-4859-8408-9c42f21aaf0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libs">
+      <UniqueIdentifier>{46209f4b-1f6d-4997-9028-7fcb3787dbcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Markdown">
+      <UniqueIdentifier>{cf2e1523-dc9d-4c88-b4f9-4867007d145d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="constants.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="flashpoint.h">
+      <Filter>Internal\Flashpoint</Filter>
+    </ClInclude>
+    <ClInclude Include="data.h">
+      <Filter>Internal\Data</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Preamble</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Preamble</Filter>
+    </ClCompile>
+    <ClCompile Include="flashpoint.cpp">
+      <Filter>Internal\Flashpoint</Filter>
+    </ClCompile>
+    <ClCompile Include="data.cpp">
+      <Filter>Internal\Data</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

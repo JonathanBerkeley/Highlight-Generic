@@ -1,0 +1,22 @@
+# Turn this .gitignore into a whitelist instead of a blacklist
+*
+!*/
+!/Highlight/
+
+# C++ source code
+!*.cpp
+!*.h
+!*.hpp
+
+# Plain text files
+!.gitignore
+!LICENSE.txt
+!LICENSE.md
+!meta.md
+!credits.md
+
+# Visual studio files
+!*.sln
+!*.vcxproj
+!*.vcxproj.filters
+!*.vcxproj.user
