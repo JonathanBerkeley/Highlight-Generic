@@ -14,9 +14,13 @@
 !LICENSE.md
 !meta.md
 !credits.md
+!CREDITS.txt
 
 # Visual studio files
 !*.sln
 !*.vcxproj
 !*.vcxproj.filters
 !*.vcxproj.user
+
+# Other
+!*.lib
