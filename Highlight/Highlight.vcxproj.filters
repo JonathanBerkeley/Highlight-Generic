@@ -68,4 +68,21 @@
       <Filter>3. Frame\Data</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\brawlhalla\Highlight\.gitignore">
+      <Filter>Resources\Markdown</Filter>
+    </None>
+    <None Include="..\..\brawlhalla\Highlight\credits.md">
+      <Filter>Resources\Markdown</Filter>
+    </None>
+    <None Include="..\..\brawlhalla\Highlight\LICENSE">
+      <Filter>Resources\Markdown</Filter>
+    </None>
+    <None Include="..\..\brawlhalla\Highlight\meta.md">
+      <Filter>Resources\Markdown</Filter>
+    </None>
+    <None Include="..\..\brawlhalla\Highlight\README.md">
+      <Filter>Resources\Markdown</Filter>
+    </None>
+  </ItemGroup>
 </Project>
