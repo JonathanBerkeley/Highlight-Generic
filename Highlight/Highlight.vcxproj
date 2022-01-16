@@ -107,6 +107,8 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -170,9 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\brawlhalla\Highlight\.gitignore" />
-    <None Include="..\..\brawlhalla\Highlight\credits.md" />
     <None Include="..\..\brawlhalla\Highlight\LICENSE" />
-    <None Include="..\..\brawlhalla\Highlight\meta.md" />
     <None Include="..\..\brawlhalla\Highlight\README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -7,7 +7,7 @@ namespace data {
 
     namespace proc {
         // Windows
-        HMODULE selfModule = NULL;
+        HMODULE self_module = nullptr;
     }
 
     namespace offset {
