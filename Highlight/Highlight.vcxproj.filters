@@ -4,9 +4,6 @@
     <Filter Include="Resources">
       <UniqueIdentifier>{6e8052e0-8f21-47cb-956a-ee271db5a807}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resources\Markdown">
-      <UniqueIdentifier>{cf2e1523-dc9d-4c88-b4f9-4867007d145d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="0. Libs">
       <UniqueIdentifier>{46209f4b-1f6d-4997-9028-7fcb3787dbcb}</UniqueIdentifier>
     </Filter>
@@ -35,6 +32,9 @@
     </Filter>
     <Filter Include="4. Mods">
       <UniqueIdentifier>{ba1e4d0c-ecb4-4f6e-b8c6-8431740afa0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Markdown">
+      <UniqueIdentifier>{3c212bbc-5868-4c09-9ded-b2081d3a68ab}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -69,13 +69,13 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\brawlhalla\Highlight\.gitignore">
+    <None Include="..\.gitignore">
       <Filter>Resources\Markdown</Filter>
     </None>
-    <None Include="..\..\brawlhalla\Highlight\LICENSE">
+    <None Include="..\LICENSE">
       <Filter>Resources\Markdown</Filter>
     </None>
-    <None Include="..\..\brawlhalla\Highlight\README.md">
+    <None Include="..\README.md">
       <Filter>Resources\Markdown</Filter>
     </None>
   </ItemGroup>

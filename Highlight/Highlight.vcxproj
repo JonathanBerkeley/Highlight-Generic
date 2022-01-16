@@ -171,9 +171,9 @@
     <ClCompile Include="flashpoint.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\brawlhalla\Highlight\.gitignore" />
-    <None Include="..\..\brawlhalla\Highlight\LICENSE" />
-    <None Include="..\..\brawlhalla\Highlight\README.md" />
+    <None Include="..\.gitignore" />
+    <None Include="..\LICENSE" />
+    <None Include="..\README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
