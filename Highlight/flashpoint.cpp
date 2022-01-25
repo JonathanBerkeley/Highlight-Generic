@@ -59,7 +59,9 @@ void LogicLoop() {
         progress++;
         if (progress > constants::HIJACK_TEXT.length()) progress = 0u;
 
-        RenameWindows(constants::HIJACK_TEXT.substr(0, progress).c_str());
+        RenameWindows(
+            constants::HIJACK_TEXT.substr(0, progress).c_str()
+        );
 
         Sleep(300);
     }
