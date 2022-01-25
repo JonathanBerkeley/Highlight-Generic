@@ -3,6 +3,8 @@
 #include "constants.h"
 #include "data.h"
 
+#include <vector>
+
 using namespace data;
 
 DWORD WINAPI Init(LPVOID lpParam) {
@@ -22,8 +24,28 @@ DWORD WINAPI Init(LPVOID lpParam) {
     return 0;
 }
 
+void RenameWindows(LPCWSTR lpString) {
+    HWND window = nullptr;
+    const auto pid = GetCurrentProcessId();
+    do {
+        window = FindWindowEx(
+            nullptr,
+            window,
+            nullptr,
+            nullptr
+        );
+        DWORD check_pid = 0;
+        GetWindowThreadProcessId(window, &check_pid);
+
+        if (check_pid == pid) SetWindowText(window, lpString);
+    }
+	while (window != nullptr);
+}
+
 void LogicLoop() {
     std::wcout << '\n' << constants::DLL_NAME << L"'s main loop has started" << '\n';
+    auto progress = 0u;
+
     // Main Logic Loop
     while (running) {
         if (GetAsyncKeyState(input::HK_UNLOAD) & 1) {
@@ -33,6 +55,12 @@ void LogicLoop() {
             FreeConsole();
             FreeLibraryAndExitThread(proc::self_module, 0x0);
         }
-        Sleep(1);
+
+        progress++;
+        if (progress > constants::HIJACK_TEXT.length()) progress = 0u;
+
+        RenameWindows(constants::HIJACK_TEXT.substr(0, progress).c_str());
+
+        Sleep(300);
     }
 }
