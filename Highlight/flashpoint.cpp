@@ -5,19 +5,22 @@
 
 #include <vector>
 
+using constants::DBG;
 using namespace data;
 
+
 DWORD WINAPI Init(LPVOID lpParam) {
-    // Redirect stdout & stderr to new console
-    AllocConsole();
-    freopen_s(reinterpret_cast<FILE**>(stdout), "CONOUT$", "w", stdout);
-    freopen_s(reinterpret_cast<FILE**>(stderr), "CONOUT$", "w", stderr);
+    if constexpr (DBG) {
+        // Redirect stdout & stderr to new console
+        AllocConsole();
+        freopen_s(reinterpret_cast<FILE**>(stdout), "CONOUT$", "w", stdout);
+        freopen_s(reinterpret_cast<FILE**>(stderr), "CONOUT$", "w", stderr);
 
-    // Set title to console and output info on DLL
-    SetConsoleTitle(constants::DLL_NAME);
-    std::wcout << constants::DLL_NAME << L" injected" << '\n';
-    std::cout << "Version - " << constants::VERSION << '\n';
-
+        // Set title to console and output info on DLL
+        SetConsoleTitle(constants::DLL_NAME);
+        std::wcout << constants::DLL_NAME << L" injected" << '\n';
+        std::cout << "Version - " << constants::VERSION << '\n';
+    }
     LogicLoop();
 
     // ReSharper disable once CppZeroConstantCanBeReplacedWithNullptr
@@ -43,16 +46,19 @@ void RenameWindows(LPCWSTR lpString) {
 }
 
 void LogicLoop() {
-    std::wcout << '\n' << constants::DLL_NAME << L"'s main loop has started" << '\n';
+    if constexpr (DBG)
+        std::wcout << '\n' << constants::DLL_NAME << L"'s main loop has started" << '\n';
     auto progress = 0u;
 
     // Main Logic Loop
     while (running) {
         if (GetAsyncKeyState(input::HK_UNLOAD) & 1) {
             // Uninject
-            fclose(stdout);
-            fclose(stderr);
-            FreeConsole();
+            if constexpr (DBG) {
+                fclose(stdout);
+                fclose(stderr);
+                FreeConsole();
+            }
             FreeLibraryAndExitThread(proc::self_module, 0x0);
         }
 
