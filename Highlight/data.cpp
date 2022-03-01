@@ -13,4 +13,3 @@ namespace data {
     namespace offset {
     }
 }
-
