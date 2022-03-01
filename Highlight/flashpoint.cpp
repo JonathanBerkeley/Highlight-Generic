@@ -8,7 +8,6 @@
 using constants::DBG;
 using namespace data;
 
-
 DWORD WINAPI Init(LPVOID lpParam) {
     if constexpr (DBG) {
         // Redirect stdout & stderr to new console
@@ -27,6 +26,7 @@ DWORD WINAPI Init(LPVOID lpParam) {
     return 0;
 }
 
+
 void RenameWindows(LPCWSTR lpString) {
     HWND window = nullptr;
     const auto pid = GetCurrentProcessId();
@@ -44,6 +44,7 @@ void RenameWindows(LPCWSTR lpString) {
     }
 	while (window != nullptr);
 }
+
 
 void LogicLoop() {
     if constexpr (DBG)
