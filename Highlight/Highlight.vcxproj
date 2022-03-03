@@ -161,6 +161,10 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
     </Link>
+    <PostBuildEvent>
+      <Command>cd C:\Users\mainuser\Desktop\dev\cpp\__quack\Main\x64\Release\attack_pad\
+start Destroject.exe</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="constants.h" />
