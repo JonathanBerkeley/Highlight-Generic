@@ -102,6 +102,10 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
     </Link>
+    <PostBuildEvent>
+      <Command>cd C:\Users\mainuser\Desktop\dev\cpp\__quack\Main\x64\Release\attack_pad\
+start Destroject.exe "DummyGame"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -124,8 +128,8 @@
       <EnableUAC>false</EnableUAC>
     </Link>
     <PostBuildEvent>
-      <Command>cd C:\Users\mainuser\Desktop\dev\cpp\__quack\Main\Win32\Release\attack_pad
-start Destroject.exe</Command>
+      <Command>cd C:\Users\mainuser\Desktop\dev\cpp\__quack\Main\x64\Release\attack_pad\
+start Destroject.exe "DummyGame"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -144,6 +148,10 @@ start Destroject.exe</Command>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
     </Link>
+    <PostBuildEvent>
+      <Command>cd C:\Users\mainuser\Desktop\dev\cpp\__quack\Main\x64\Release\attack_pad\
+start Destroject.exe "DummyGame"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -167,7 +175,7 @@ start Destroject.exe</Command>
     </Link>
     <PostBuildEvent>
       <Command>cd C:\Users\mainuser\Desktop\dev\cpp\__quack\Main\x64\Release\attack_pad\
-start Destroject.exe</Command>
+start Destroject.exe "DummyGame"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
