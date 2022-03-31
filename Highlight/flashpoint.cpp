@@ -1,7 +1,7 @@
-#include "pch.h"
-#include "flashpoint.h"
-#include "constants.h"
-#include "data.h"
+#include "pch.hpp"
+#include "flashpoint.hpp"
+#include "constants.hpp"
+#include "data.hpp"
 
 #include <vector>
 

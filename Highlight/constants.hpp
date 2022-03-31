@@ -1,5 +1,5 @@
 #pragma once
-#include "pch.h"
+#include "pch.hpp"
 
 namespace constants {
     const LPCWSTR DLL_NAME { L"Generic" };
