@@ -47,8 +47,10 @@ void RenameWindows(LPCWSTR lpString) {
 
 
 void LogicLoop() {
-    if constexpr (DBG)
-        std::wcout << '\n' << constants::DLL_NAME << L"'s main loop has started" << '\n';
+    if constexpr (DBG) {
+        std::wcout << L'\n' << constants::DLL_NAME << L"'s main loop has started" << L'\n';
+        std::wcout << L"0x" << std::hex << GetModuleHandle(nullptr) << L'\n';
+    }
     auto progress = 0u;
 
     // Main Logic Loop
